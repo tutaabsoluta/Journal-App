@@ -43,3 +43,11 @@ Un componente es una pequena pieza de mi aplicacion
 Layout es el cascaron relacionado al estilo
 Pages es algo que ocupa toda la vista de la pantalla desde el punto de vista del user
 Views: Un componente que ocupa cierta parte de la pantalla
+
+**Autenticacion con Firebase**
+
+- Para trabajar con Firebase primero se instala el paquete.
+- Luego se crea un folder llamado Firebase y dentro un archivo config.js, donde exportamos los objetos que nos permitiran interactuar con Firebase.
+- Seguidamente creamos un usuario en el Proyecto creado en la Web de Firebase. Usamos la cuenta de Google.
+- El archivo Providers seran nuestros proveedores de autenticacion.
+- La funcion signInWithGoogle se llama en el Thunk
