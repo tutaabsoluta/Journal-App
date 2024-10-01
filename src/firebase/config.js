@@ -22,3 +22,5 @@ export const FirebaseDB = getFirestore( FirebaseApp );
 // FirebaseAuth: funcionalidades de autenticacion
 
 // FirebaseDB: configuracion de la BD
+
+// Lo utilizamos para autenticacion y para almacenamiento

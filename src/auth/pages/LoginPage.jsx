@@ -9,17 +9,20 @@ import { checkingAuthentication, startGoogleSignIn } from "../../store/auth";
 import { useMemo } from "react";
 
 export const LoginPage = () => {
-
-  const { status } = useSelector( state => state.auth )
-
+  
   const dispatch = useDispatch();
+  
+  // Extraer el estado de la autenticacion del Store
+  const { status } = useSelector( state => state.auth );
+
+  // Crear un boolean para deshabilitar btn
+  const isAuthenticating = useMemo(() => status === 'checking', [status]);
 
   const { email, password, onInputChange, formState } = useForm({
     email: 'sergio@mail.com',
     password: '123456'
   });
 
-  const isAuthenticating = useMemo(() => status === 'checking', [status]);
 
   const onSubmit = ( e ) => {
     e.preventDefault();

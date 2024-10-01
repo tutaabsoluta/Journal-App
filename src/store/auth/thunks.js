@@ -2,23 +2,25 @@ import { signInWithGoogle } from "../../firebase/providers";
 import { checkingCredentials, login, logout } from "./"
 
 
-export const checkingAuthentication = ( email, password ) => {
-    return async ( dispatch ) => {
-        dispatch( checkingCredentials() )
-    }
+export const checkingAuthentication = (email, password) => {
+  return async (dispatch) => {
+    dispatch(checkingCredentials());
+  };
 };
 
+// Funcion disparada al tocar el Btn de Google
 export const startGoogleSignIn = () => {
     return async ( dispatch ) => {
+      // Mostrar mensaja de Checking
         dispatch( checkingCredentials() )
 
+        // result tiene los datos de la cuenta de google
         const result = await signInWithGoogle();
         
-        if ( !result.ok ) {
-            return dispatch( logout( result.errorMessage ) );
-        }
+        if ( !result.ok ) return dispatch( logout( result.errorMessage ) );
+        // delete result.ok
 
-        // Si todo sale bien hago un dispatch de un objeto que pase al Login
+        // Si todo es correcto, a la accion login le pasamos el objeto de la cuenta de google
         dispatch( login( result ) )   
     }
 }
