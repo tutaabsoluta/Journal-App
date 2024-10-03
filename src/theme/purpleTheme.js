@@ -1,5 +1,5 @@
-import { createTheme } from "@mui/material";
-import { red } from "@mui/material/colors";
+import { createTheme } from '@mui/material';
+import { red } from '@mui/material/colors';
 
 export const purpleTheme = createTheme({
     palette: {
@@ -11,8 +11,11 @@ export const purpleTheme = createTheme({
         },
         error: {
             main: red.A400
-        },
+        }
     }
 })
 
-// A400 es la intensidad de color, y el A400 es el 40% de intensidad.
+
+
+
+

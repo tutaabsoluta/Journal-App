@@ -2,16 +2,12 @@ import { Navigate, Route, Routes } from "react-router-dom"
 import { JournalPage } from "../pages/JournalPage"
 
 
-
-const JournalRoutes = () => {
+export const JournalRoutes = () => {
   return (
     <Routes>
-        <Route path="/" element={ <JournalPage /> }/>
+        <Route path="/" element={ <JournalPage /> } />
 
-        {/* Redirect */}
-        <Route path="/*" element={ <Navigate to='/' /> } />
+        <Route path="/*" element={ <Navigate to="/" /> } />
     </Routes>
   )
 }
-
-export default JournalRoutes

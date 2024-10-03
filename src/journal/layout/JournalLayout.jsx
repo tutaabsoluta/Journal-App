@@ -1,31 +1,27 @@
-import { Box, Toolbar } from "@mui/material"
-import { NavBar, SideBar } from "../components"
+import { Toolbar } from '@mui/material';
+import { Box } from '@mui/system'
+import { NavBar, SideBar } from '../components';
 
-const drawerWidth = 240;
+
+const drawerWidth = 280;
 
 export const JournalLayout = ({ children }) => {
   return (
-    <Box sx={{ display: 'flex' }}>
-        {/* Navbar */}
+    <Box sx={{ display: 'flex' }} className='animate__animated animate__fadeIn animate__faster'>
+
         <NavBar drawerWidth={ drawerWidth } />
 
         <SideBar drawerWidth={ drawerWidth } />
 
-        {/* Sidebar */}
         <Box 
             component='main'
             sx={{ flexGrow: 1, p: 3 }}
         >
-        {/* Toolbar */}
-        <Toolbar />
-        { children }
+            <Toolbar />
 
-
+            { children }
+            
         </Box>
-
     </Box>
   )
 }
-
-// Como este componente es un Layout, espera un children
-// La barra lateral siempre tendra tamano especifico. Para esto creamos una variable
