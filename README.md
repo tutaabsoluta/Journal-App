@@ -51,3 +51,8 @@ Views: Un componente que ocupa cierta parte de la pantalla
 - Seguidamente creamos un usuario en el Proyecto creado en la Web de Firebase. Usamos la cuenta de Google.
 - El archivo Providers seran nuestros proveedores de autenticacion.
 - La funcion signInWithGoogle se llama en el Thunk
+
+- El AppRouter esta pendiente del status de la App. Si esta en checking renderiza un componente que muestra un spinner. Pero se deben disparar un efecto para cambiar ese checking si se esta autenticado
+
+- Firebase tiene una forma de saber los cambios que ocurran con el usuario
+onAuthStateChanged

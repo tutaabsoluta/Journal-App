@@ -50,6 +50,7 @@ export const startLoginWithEmailPassword = ({ email, password }) => {
         console.log(result);
 
         if ( !result.ok ) return dispatch( logout( result ) );
+        console.log(result)
         dispatch( login( result ));
 
     }
@@ -65,4 +66,6 @@ export const startLogout = () => {
 
     }
 }
+
+// Deslogear de Firebase y de la App
 

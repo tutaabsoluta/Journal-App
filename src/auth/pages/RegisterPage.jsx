@@ -59,7 +59,7 @@ export const RegisterPage = () => {
                 value={ displayName }
                 onChange={ onInputChange }
                 error={ !!displayNameValid && formSubmitted }
-                helperText={ displayNameValid }
+                helperText={ !! formSubmitted && displayNameValid }
               />
             </Grid>
 
@@ -73,7 +73,7 @@ export const RegisterPage = () => {
                 value={ email }
                 onChange={ onInputChange }
                 error={ !!emailValid && formSubmitted }
-                helperText={ emailValid }
+                helperText={ !! formSubmitted && emailValid }
               />
             </Grid>
 
@@ -87,7 +87,7 @@ export const RegisterPage = () => {
                 value={ password }
                 onChange={ onInputChange }
                 error={ !!passwordValid && formSubmitted  }
-                helperText={ passwordValid }
+                helperText={ !! formSubmitted && passwordValid }
               />
             </Grid>
             

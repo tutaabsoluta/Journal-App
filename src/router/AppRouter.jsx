@@ -17,6 +17,7 @@ export const AppRouter = () => {
   return (
     <Routes>
 
+        {/* Proteccion de rutas */}
         {
           (status === 'authenticated')
            ? <Route path="/*" element={ <JournalRoutes /> } />
@@ -34,3 +35,5 @@ export const AppRouter = () => {
     </Routes>
   )
 }
+
+// Si el usuario esta autenticado y se va a una ruta auth, la app no lo permite porque esas rutas no existen

@@ -40,17 +40,9 @@ export const singInWithGoogle = async () => {
 };
 
 // Registrarse con Usuario y Password
-export const registerUserWithEmailPassword = async ({
-  email,
-  password,
-  displayName,
-}) => {
+export const registerUserWithEmailPassword = async ({ email, password, displayName }) => {
   try {
-    const resp = await createUserWithEmailAndPassword(
-      FirebaseAuth,
-      email,
-      password
-    );
+    const resp = await createUserWithEmailAndPassword( FirebaseAuth, email, password );
     const { uid, photoURL } = resp.user;
 
     await updateProfile(FirebaseAuth.currentUser, { displayName });
@@ -68,14 +60,10 @@ export const registerUserWithEmailPassword = async ({
   }
 };
 
-// Login con Email y Password
+// Login con Email y Password. Revisa si las credenciales existen en Firebase
 export const loginWithEmailPassword = async ({ email, password }) => {
   try {
-    const resp = await signInWithEmailAndPassword(
-      FirebaseAuth,
-      email,
-      password
-    );
+    const resp = await signInWithEmailAndPassword( FirebaseAuth, email, password );
     const { uid, photoURL, displayName } = resp.user;
 
     return {
@@ -92,3 +80,9 @@ export const loginWithEmailPassword = async ({ email, password }) => {
 export const logoutFirebase = async () => {
   return await FirebaseAuth.signOut();
 };
+
+// singInWithGoogle tiene el objeto con la info del Usuario o el objeto del error
+// signInWithEmailAndPassword: se le pasan el email y password. Si no existen se retorna un error
+// Obtener usuario actual de Firebase: FirebaseAuth.currentUser
+
+// Cada una de estas funciones cambiara el estado del user
